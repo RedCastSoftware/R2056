@@ -6,6 +6,7 @@ Note: So far, only a few instructions have been added but will add more in the f
 Requirements (Python):
 -standard python libraries (time)
 -numpy
+
 Requirements (Javascript):
 -Node.js (As new as possible)
 -Node standard functions
