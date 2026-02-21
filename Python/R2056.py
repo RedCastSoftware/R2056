@@ -43,13 +43,10 @@ def o69(inp,carry):
         carry=0
     registers["A"] %= 256
     return carry
-def oE9(inp,carry):
-    registers["A"]-=inp-(1-carry)
-    if registers["A"] > 255:
-        carry=1
-    else:
-        carry=0
-    registers["A"] %= 256
+def oE9(val, carry):
+    result = registers["A"] - val - (1 - carry)
+    carry = 1 if result >= 0 else 0
+    registers["A"] = result & 0xFF  # Wrap to 0-255
     return carry
 istr = {
       0xA9: oA9,
@@ -59,7 +56,8 @@ istr = {
       0x86: o86,
       0x84: o84,
       0x69: o69
-      }
+      0xe9: oE9,
+}
 icarus_pro = {
     1: (0xA9,8),
     2: (0x69,256)
