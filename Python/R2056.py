@@ -55,14 +55,13 @@ istr = {
       0x8D: o8D,
       0x86: o86,
       0x84: o84,
-      0x69: o69
+      0x69: o69,
       0xe9: oE9,
 }
 icarus_pro = {
     1: (0xA9,8),
-    2: (0x69,256)
-    
-    }
+    2: (0x69,256),
+}
 s = time.perf_counter()
 for _ in range(1000000):
     for i in icarus_pro:
