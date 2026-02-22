@@ -64,6 +64,7 @@ icarus_pro = {
 }
 s = time.perf_counter()
 for _ in range(1000000):
+    carry = 0
     for i in icarus_pro:
         op = icarus_pro[i][0]
         carry = istr[op](icarus_pro[i][1],carry) 
